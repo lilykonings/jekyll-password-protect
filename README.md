@@ -33,3 +33,11 @@ Heads up that if you write public posts to `DEST-FOLDER`, it may be difficult to
 
 ### Protect Posts
 To encrypt a post, simply save it in your desinated `SRC-FOLDER` and run `gulp`.
+
+## Credit
+### Libraries
+- [cryptojs](https://github.com/brix/crypto-js)
+- [markedjs](https://github.com/markedjs/marked)
+
+### Contributor
+- [lmenus](https://github.com/lmenus)
