@@ -2,10 +2,11 @@
 Password protect Jekyll posts.
 
 ## Disclaimer
-In addition to the disclaimers put forth by [crypto-js](https://github.com/brix/crypto-js) and [staticrypt](https://github.com/robinmoisson/staticrypt), 
+In addition to the disclaimers put forth by [crypto-js](https://github.com/brix/crypto-js) and [staticrypt](https://github.com/robinmoisson/staticrypt), keep the following in mind:
 
 - Liquid templating isn't currently supported in protected posts
 - Use only Markdown syntax supported by [marked](https://marked.js.org)
+- The password needs to be entered for each protected post. But you can easily store a successful password in cache and bypass login
 
 ## Installation
 To begin a new site, build on top of this repository by forking or cloning.
