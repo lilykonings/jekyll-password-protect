@@ -7,7 +7,7 @@ Before using, keep the following in mind:
 - This encryption type is weak against brute force attacks. [Here](https://github.com/lllychen/jekyll-firewall/pull/3/commits/038ce8e143d1749375137589fca8e1401a82f4bf) is an example of a safe guard by [lmenus](https://github.com/lmenus).
 - Liquid templating isn't currently supported in protected posts
 - Use only Markdown syntax supported by [marked](https://marked.js.org)
-- The password needs to be entered for each protected post. But you can easily store a successful password in cache and bypass login
+- The password needs to be entered for each protected post. But you can easily store a successful password in cache and bypass subsequent logins
 - I discourage storing your site in a public repository unless you are okay with gitignoring sensitive information (and have no remote backup)
 
 ## Installation
