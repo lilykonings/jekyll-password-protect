@@ -1,9 +1,9 @@
 {
-  "name": "portfolio",
-  "version": "5.0.1",
+  "name": "password-protect-jekyll",
+  "version": "0.0.1",
   "author": "Lillian Chen",
-  "description": "Lily is currently a developer at IBM Watson Health based in Cambridge, Massachusetts.",
-  "repository": "https://github.com/lllychen/lllychen.github.io",
+  "description": "Password protect Jekyll posts",
+  "repository": "http://lily.work/password-protect-jekyll/",
   "devDependencies": {
     "crypto-js": "^3.1.9-1",
     "fs": "0.0.1-security",
