@@ -9,22 +9,34 @@ var FileSystem    = require('fs');
 var through       = require('through2');
 var PluginError   = gutil.PluginError;
 
-function forceEncryptedLayout(frontMatter) {
-  var lines = frontMatter.split('\n');
-  var linesWithoutLayout = [];
+function checkEncryptedLayout(frontMatter, filepath) {
+  var lines = frontMatter.split('\n'),
+      linesWithoutLayout = [],
+      hasEncryptedLayout = false;
 
   lines.forEach(function(line) {
-    var isLayout = line.indexOf('layout:') === 0;
-    if (!isLayout) linesWithoutLayout.push(line);
+    var layoutTag = 'layout:',
+        isLayoutIndex = line.indexOf(layoutTag),
+        isLayout = isLayoutIndex >= 0,
+        isEncryptedLayout = line.indexOf('encrypted') >= (isLayoutIndex + layoutTag.length);
+
+    if (isLayout) {
+      // in case of multiple instances of layout
+      hasEncryptedLayout = isEncryptedLayout ? true : false;
+    }
   });
 
-  var linesWithLayout = linesWithoutLayout
-    .splice(0, 1)
-    .concat('layout: encrypted')
-    .concat(linesWithoutLayout);
+  if (!hasEncryptedLayout) {
+    console.log('[WARNING] ' + filepath + ': protected post not using encrypted layout.');
+  }
 
-  var frontMatterWithEncryptedLayout = linesWithLayout.join('\n');
-  return frontMatterWithEncryptedLayout;
+  // var linesWithLayout = linesWithoutLayout
+  //   .splice(0, 1)
+  //   .concat('layout: encrypted')
+  //   .concat(linesWithoutLayout);
+
+  // var frontMatterWithEncryptedLayout = linesWithLayout.join('\n');
+  // return frontMatterWithEncryptedLayout;
 }
 
 function encrypt(password) {
@@ -45,7 +57,7 @@ function encrypt(password) {
 
     if (file.isBuffer()) {
       var chunks = String(file.contents).split('---');
-      var frontMatter = forceEncryptedLayout(chunks[1]);
+      var frontMatter = checkEncryptedLayout(chunks[1], file.path);
 
       var encrypted = cryptojs.AES.encrypt(marked(chunks[2]), password);
       var hmac = cryptojs.HmacSHA256(encrypted.toString(), cryptojs.SHA256(password).toString()).toString();
