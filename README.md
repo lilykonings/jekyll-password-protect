@@ -7,6 +7,7 @@ In addition to the disclaimers put forth by [crypto-js](https://github.com/brix/
 - Liquid templating isn't currently supported in protected posts
 - Use only Markdown syntax supported by [marked](https://marked.js.org)
 - The password needs to be entered for each protected post. But you can easily store a successful password in cache and bypass login
+- Don't store your site in a public repository or it defeats the point
 
 ## Installation
 To begin a new site, build on top of this repository by forking or cloning.
