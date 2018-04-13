@@ -28,6 +28,8 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
+    minima (2.1.1)
+      jekyll (~> 3.3)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.2)
@@ -48,6 +50,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (= 3.4.3)
+  minima
   tzinfo-data
 
 RUBY VERSION
