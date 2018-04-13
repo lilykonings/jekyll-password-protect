@@ -1,13 +1,14 @@
 # jekyll-firewall
 Password protect Jekyll posts.
 
-## Disclaimer
-In addition to the disclaimers put forth by [crypto-js](https://github.com/brix/crypto-js) and [staticrypt](https://github.com/robinmoisson/staticrypt), keep the following in mind:
+## Disclaimers
+Before using, keep the following in mind:
 
+- This encryption type is weak against brute force attacks. [Here](https://github.com/lllychen/jekyll-firewall/pull/3/commits/038ce8e143d1749375137589fca8e1401a82f4bf) is an example of a safe guard by [lmenus](https://github.com/lmenus).
 - Liquid templating isn't currently supported in protected posts
 - Use only Markdown syntax supported by [marked](https://marked.js.org)
 - The password needs to be entered for each protected post. But you can easily store a successful password in cache and bypass login
-- Don't store your site in a public repository or it defeats the point
+- I discourage storing your site in a public repository unless you are okay with gitignoring sensitive information (and have no remote backup)
 
 ## Installation
 To begin a new site, build on top of this repository by forking or cloning.
