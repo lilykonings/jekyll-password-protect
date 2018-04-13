@@ -27,7 +27,7 @@ function checkEncryptedLayout(frontMatter, filepath) {
   });
 
   if (!hasEncryptedLayout) {
-    console.log('[WARNING] ' + filepath + ': protected post not using encrypted layout.');
+    console.log('[WARNING] ' + filepath + ': protected file not using encrypted layout.');
   }
 
   // var linesWithLayout = linesWithoutLayout
@@ -56,14 +56,27 @@ function encrypt(password) {
     }
 
     if (file.isBuffer()) {
-      var chunks = String(file.contents).split('---');
-      var frontMatter = checkEncryptedLayout(chunks[1], file.path);
+      var delimiter = '---',
+          chunks = String(file.contents).split(delimiter),
+          originalBody = chunks[0],
+          frontMatter = '';
 
-      var encrypted = cryptojs.AES.encrypt(marked(chunks[2]), password);
-      var hmac = cryptojs.HmacSHA256(encrypted.toString(), cryptojs.SHA256(password).toString()).toString();
-      var encryptedMessage = 'encrypted: ' + hmac + encrypted;
+      if (chunks.length === 3) {
+        checkEncryptedLayout(chunks[1], file.path);
+        frontMatter = chunks[1];
+        originalBody = chunks[2];
+      } else if (chunks.length > 1) {
+        this.emit('error', new PluginError({
+          plugin: 'Encrypt',
+          message: file.path + ': protected file has invalid front matter.'
+        }));
+        return callback();
+      }
 
-      var result = [ '---', frontMatter, '\n', encryptedMessage, '\n', '---' ]
+      var encryptedBody = cryptojs.AES.encrypt(marked(originalBody), password),
+          hmac = cryptojs.HmacSHA256(encryptedBody.toString(), cryptojs.SHA256(password).toString()).toString(),
+          encryptedFrontMatter = 'encrypted: ' + hmac + encryptedBody,
+          result = [ delimiter, frontMatter, '\n', encryptedFrontMatter, '\n', delimiter ];
 
       file.contents = new Buffer(result.join(''));
       this.push(file);
