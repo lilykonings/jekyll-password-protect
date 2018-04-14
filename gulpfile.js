@@ -9,6 +9,9 @@ var FileSystem    = require('fs');
 var through       = require('through2');
 var PluginError   = gutil.PluginError;
 
+/*
+  START FIREWALL TASKS
+*/
 function checkEncryptedLayout(frontMatter, filepath) {
   var lines = frontMatter.split('\n'),
       linesWithoutLayout = [],
@@ -85,14 +88,22 @@ function encrypt(password) {
   });
 }
 
-gulp.task('encrypt', () => {
+gulp.task('firewall:encrypt', () => {
   return gulp.src('_protected/*.*')
     .pipe(encrypt('password'))
     .pipe(gulp.dest('_posts'));
 });
 
-gulp.task('watch', () => {
+gulp.task('firewall:watch', () => {
   gulp.watch('_protected/*.*', ['encrypt']);
 });
 
-gulp.task('default', ['encrypt', 'watch'], () => {});
+gulp.task('firewall', ['firewall:encrypt', 'firewall:watch'], () => {});
+
+/*
+  END FIREWALL TASKS
+*/
+
+gulp.task('default', ['firewall'], () => {
+  // your tasks here
+});
