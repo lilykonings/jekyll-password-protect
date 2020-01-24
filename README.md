@@ -1,6 +1,8 @@
 # jekyll-firewall
 Password protect Jekyll posts.
 
+![Demo](https://github.com/lllychen/jekyll-firewall/blob/master/demo.gif)
+
 ## Disclaimers
 Before using, keep the following in mind:
 
