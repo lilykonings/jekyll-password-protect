@@ -42,4 +42,5 @@ To encrypt a post, simply save it in your desinated `SRC-FOLDER` and run `gulp`.
 - [markedjs](https://github.com/markedjs/marked)
 
 ### Contributor
-- [lmenus](https://github.com/lmenus)
+- [mrlubos](https://github.com/mrlubos)
+- [Firefox2100](https://github.com/Firefox2100)
