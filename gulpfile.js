@@ -95,15 +95,16 @@ gulp.task('firewall:encrypt', () => {
 });
 
 gulp.task('firewall:watch', () => {
-  gulp.watch('_protected/*.*', ['encrypt']);
+  gulp.watch('_protected/*.*', gulp.series('firewall:encrypt'));
 });
 
-gulp.task('firewall', ['firewall:encrypt', 'firewall:watch'], () => {});
+gulp.task('firewall', gulp.series('firewall:encrypt', 'firewall:watch',() => {}));
+
 
 /*
   END FIREWALL TASKS
 */
 
-gulp.task('default', ['firewall'], () => {
+gulp.task('default', gulp.series('firewall', () => {
   // your tasks here
-});
+}));
