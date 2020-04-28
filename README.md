@@ -6,7 +6,7 @@ Password protect Jekyll posts.
 ## Disclaimers
 Before using, keep the following in mind:
 
-- This encryption type is weak against brute force attacks. [Here](https://github.com/lllychen/jekyll-firewall/pull/3/commits/038ce8e143d1749375137589fca8e1401a82f4bf) is an example of a safe guard by [lmenus](https://github.com/lmenus).
+- This encryption type is weak against brute force attacks. [Here](https://github.com/lllychen/jekyll-firewall/pull/3/commits/038ce8e143d1749375137589fca8e1401a82f4bf) is an example of a safe guard by [mrlubos](https://github.com/mrlubos).
 - Liquid templating isn't currently supported in protected posts
 - Use only Markdown syntax supported by [marked](https://marked.js.org)
 - The password needs to be entered for each protected post. But you can easily store a successful password in cache and bypass subsequent logins
@@ -41,6 +41,6 @@ To encrypt a post, simply save it in your desinated `SRC-FOLDER` and run `gulp`.
 - [cryptojs](https://github.com/brix/crypto-js)
 - [markedjs](https://github.com/markedjs/marked)
 
-### Contributor
+### Contributors
 - [mrlubos](https://github.com/mrlubos)
 - [Firefox2100](https://github.com/Firefox2100)
