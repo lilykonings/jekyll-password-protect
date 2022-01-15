@@ -9,7 +9,7 @@
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
-    "marked": "^0.3.19",
+    "marked": "^4.0.10",
     "through2": "^2.0.3"
   }
 }
