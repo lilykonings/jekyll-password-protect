@@ -12,4 +12,8 @@
     "marked": "^0.3.19",
     "through2": "^2.0.3"
   }
+    "overrides": {
+    "graceful-fs": "^4.2.9"
+  }
+
 }
