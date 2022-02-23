@@ -1,0 +1,10 @@
+---
+layout: encrypted
+title: "Techniques with Phone"
+keywords: ["life"]
+description: "清单"
+category: "life"
+tags: ["life"]
+
+encrypted: 666a95925b2e0ebabe1fa55931c44f9e9820fa5d1717ae0153dbd518738760ecU2FsdGVkX19HdHri0HdmBk1yHcQVxuNixIdevB0BjBaWAHxkD0ms5gqR0T9+UTKoirLAzNF6CUouDciOsy7uuEdeTl/A/FnLCobsosyn7kIiO9X/81MRWrsvPEuqsLQA3eYqaHvsLDHh71kRQsgE+JT8xFZLCUaAzernN5SZKrnUpMYFK74rSHyKjcm4mKUrpKLVlRWrEe4ppsbCbGAdxyAmjPQn3woLLw2+bRo50e9uSNyv/i+MByCNUpAoLAYrkvq5L+XYGjaKHbYoPbc6aVo+/7YIE3B9MqjSENTuN2zqUHtCiCJTFoRGGaN5G8nboxS0/kD4FdmJ3884Ca7PHhdobnqdvC7cb1p/IyNcXoOiyj9xCihb3h96F6VYQpvJMa9VqYkqIlIVjdR7wHzzEP0fuaTf8b9ksCjBn6Qq4EePzoRGTnIecmfMvUhFCs/GL+khQOVJxI/4RbStdLecVnTHa3lOPCzM6JgFZEJqvGzkddtXAgErwth6JKd1hyGnFGve//rLaoIYpS2txbAvjqjASEfM9l/7Yr0ytqp8wDlgb9DQvgoUb06ErmN/hg9GCxI5JkAivV6f8xZ/NYUWiQ==
+---
