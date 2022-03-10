@@ -76,7 +76,7 @@ function encrypt(password) {
         return callback();
       }
 
-      var encryptedBody = cryptojs.AES.encrypt(marked(originalBody), password),
+      var encryptedBody = cryptojs.AES.encrypt(marked.parse(originalBody), password),
           hmac = cryptojs.HmacSHA256(encryptedBody.toString(), cryptojs.SHA256(password).toString()).toString(),
           encryptedFrontMatter = 'encrypted: ' + hmac + encryptedBody,
           result = [ delimiter, frontMatter, '\n', encryptedFrontMatter, '\n', delimiter ];
@@ -90,7 +90,7 @@ function encrypt(password) {
 
 gulp.task('firewall:encrypt', () => {
   return gulp.src('_protected/*.*')
-    .pipe(encrypt('password'))
+    .pipe(encrypt('kismet2357'))
     .pipe(gulp.dest('_posts'));
 });
 
