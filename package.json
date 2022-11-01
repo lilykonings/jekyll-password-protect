@@ -7,7 +7,7 @@
   "devDependencies": {
     "crypto-js": "^3.1.9-1",
     "fs": "0.0.1-security",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-util": "^3.0.8",
     "marked": "^0.3.19",
     "through2": "^2.0.3"
